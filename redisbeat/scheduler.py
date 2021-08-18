@@ -37,7 +37,7 @@ class RedisScheduler(Scheduler):
         self.key = app.conf.get("CELERY_REDIS_SCHEDULER_KEY",
                                 "celery:beat:order_tasks")
         self.schedule_url = app.conf.get("CELERY_REDIS_SCHEDULER_URL",
-                                         "redis://localhost:6379")
+                                         "redis://redis:6379")
         # using sentinels
         # supports 'sentinel://:pass@host:port/db
         if self.schedule_url.startswith('sentinel://'):
